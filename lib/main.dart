@@ -37,49 +37,50 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            SizedBox(height: 15),
-            Spacer(flex: 30),
-            Text(
-              'BINARYMIXX',
-              style: GoogleFonts.orbitron(
-                textStyle: TextStyle(
-                    foreground: Paint()
-                      ..style = PaintingStyle.stroke
-                      ..strokeWidth = 2
-                      ..color = Color.fromARGB(255, 255, 255, 255),
-                    fontSize: 90),
-              ),
-            ),
-            SizedBox(height: 15),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const MymainApp(
-                                title: '',
-                              )));
-                },
-                // ignore: sort_child_properties_last
-                child: Text(
-                  'Start',
-                  style:
-                      GoogleFonts.orbitron(textStyle: TextStyle(fontSize: 15)),
+        body: Stack(children: [
+          Center(
+            child: Column(
+              children: [
+                SizedBox(height: 15),
+                Spacer(flex: 30),
+                Text(
+                  'BINARYMIXX',
+                  style: GoogleFonts.orbitron(
+                    textStyle: TextStyle(
+                        foreground: Paint()
+                          ..style = PaintingStyle.stroke
+                          ..strokeWidth = 2
+                          ..color = Color.fromARGB(255, 255, 255, 255),
+                        fontSize: 90),
+                  ),
                 ),
-                style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16)),
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 100, vertical: 30))),
-            SizedBox(height: 15),
-            Spacer(flex: 30),
-          ],
-        ),
-      ),
-      backgroundColor: Color.fromARGB(255, 10, 9, 27),
-    );
+                SizedBox(height: 15),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MymainApp(
+                                    title: '',
+                                  )));
+                    },
+                    // ignore: sort_child_properties_last
+                    child: Text(
+                      'Start',
+                      style: GoogleFonts.orbitron(
+                          textStyle: TextStyle(fontSize: 15)),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16)),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 100, vertical: 30))),
+                SizedBox(height: 15),
+                Spacer(flex: 30),
+              ],
+            ),
+          )
+        ]),
+        backgroundColor: Color.fromARGB(255, 11, 9, 31));
   }
 }
