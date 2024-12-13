@@ -30,109 +30,174 @@ class _MymainAppState extends State<MymainApp> {
       body: Align(
         alignment: Alignment.centerLeft,
         child: Column(
-          children: [SizedBox(height: 50),
+          children: [
+            SizedBox(height: 50),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Wrap(
-                children: [Column(children: [SizedBox(width: 250, child: TextField(
-                controller: _controllerA, // Asocia el TextEditingController
-                style: GoogleFonts.orbitron(textStyle: TextStyle(color: const Color.fromARGB(255, 251, 251, 251))),
-                keyboardType: TextInputType.number, // Solo permite números
-                decoration: InputDecoration(
-                  labelStyle: GoogleFonts.orbitron(),
-                  labelText: 'ANTOINE CONSTANT A',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: const Color.fromARGB(255, 255, 255, 255), // Color del borde
+                    width: 1, // Ancho del borde
+                  ),
+                  borderRadius: BorderRadius.circular(16), // Esquinas redondeadas
                 ),
-              )
-              ), 
-              SizedBox(height: 15),
-              SizedBox(width: 250, child: TextField(
-                controller: _controllerB, // Asocia el TextEditingController
-                style: GoogleFonts.orbitron(textStyle: TextStyle(color: const Color.fromARGB(255, 251, 251, 251))),
-                keyboardType: TextInputType.number, // Solo permite números
-                decoration: InputDecoration(
-                  labelStyle: GoogleFonts.orbitron(),
-                  labelText: 'ANTOINE CONSTANT B',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+                padding: EdgeInsets.all(8.0), // Espaciado interno
+                child: Wrap(
+                  children: [
+                    Column(
+                      children: [
+                        SizedBox(
+                          width: 250,
+                          child: TextField(
+                            controller: _controllerA,
+                            style: GoogleFonts.orbitron(
+                                textStyle: TextStyle(
+                                    color: const Color.fromARGB(
+                                        255, 251, 251, 251))),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              labelStyle: GoogleFonts.orbitron(),
+                              labelText: 'ANTOINE CONSTANT A',
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 15),
+                        SizedBox(
+                          width: 250,
+                          child: TextField(
+                            controller: _controllerB,
+                            style: GoogleFonts.orbitron(
+                                textStyle: TextStyle(
+                                    color: const Color.fromARGB(
+                                        255, 251, 251, 251))),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              labelStyle: GoogleFonts.orbitron(),
+                              labelText: 'ANTOINE CONSTANT B',
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 15),
+                        SizedBox(
+                          width: 250,
+                          child: TextField(
+                            controller: _controllerC,
+                            style: GoogleFonts.orbitron(
+                                textStyle: TextStyle(
+                                    color: const Color.fromARGB(
+                                        255, 251, 251, 251))),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              labelStyle: GoogleFonts.orbitron(),
+                              labelText: 'ANTOINE CONSTANT C',
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 15),
+                        SizedBox(
+                          width: 250,
+                          child: TextField(
+                            controller: _controllerT,
+                            style: GoogleFonts.orbitron(
+                                textStyle: TextStyle(
+                                    color: const Color.fromARGB(
+                                        255, 251, 251, 251))),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              labelStyle: GoogleFonts.orbitron(),
+                              labelText: 'SATURATION TEMPERATURE',
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 15),
+                    Column(
+                      children: [
+                        SizedBox(
+                          width: 250,
+                          child: TextField(
+                            controller: _controllerAI,
+                            style: GoogleFonts.orbitron(
+                                textStyle: TextStyle(
+                                    color: const Color.fromARGB(
+                                        255, 251, 251, 251))),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              labelStyle: GoogleFonts.orbitron(),
+                              labelText: 'CONSTANT A II',
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 15),
+                        SizedBox(
+                          width: 250,
+                          child: TextField(
+                            controller: _controllerBI,
+                            style: GoogleFonts.orbitron(
+                                textStyle: TextStyle(
+                                    color: const Color.fromARGB(
+                                        255, 251, 251, 251))),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              labelStyle: GoogleFonts.orbitron(),
+                              labelText: 'CONSTANT B II',
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 15),
+                        SizedBox(
+                          width: 250,
+                          child: TextField(
+                            controller: _controllerCI,
+                            style: GoogleFonts.orbitron(
+                                textStyle: TextStyle(
+                                    color: const Color.fromARGB(
+                                        255, 251, 251, 251))),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              labelStyle: GoogleFonts.orbitron(),
+                              labelText: 'CONSTANT C II',
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 15),
+                        SizedBox(
+                          width: 250,
+                          child: TextField(
+                            controller: _controllerTI,
+                            style: GoogleFonts.orbitron(
+                                textStyle: TextStyle(
+                                    color: const Color.fromARGB(
+                                        255, 251, 251, 251))),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                              labelStyle: GoogleFonts.orbitron(),
+                              labelText: 'SATURATION TEMPERATURE II',
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(16)),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-              )
-              ),
-              SizedBox(height: 15),
-              SizedBox(width: 250, child: TextField(
-                controller: _controllerC, // Asocia el TextEditingController
-                style: GoogleFonts.orbitron(textStyle: TextStyle(color: const Color.fromARGB(255, 251, 251, 251))),
-                keyboardType: TextInputType.number, // Solo permite números
-                decoration: InputDecoration(
-                  labelStyle: GoogleFonts.orbitron(),
-                  labelText: 'ANTOINE CONSTANT C',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-                ),
-              )
-              ), 
-              SizedBox(height: 15),
-              SizedBox(width: 250, child: TextField(
-                controller: _controllerT, // Asocia el TextEditingController
-                style: GoogleFonts.orbitron(textStyle: TextStyle(color: const Color.fromARGB(255, 251, 251, 251))),
-                keyboardType: TextInputType.number, // Solo permite números
-                decoration: InputDecoration(
-                  labelStyle: GoogleFonts.orbitron(),
-                  labelText: 'SATURATION TEMPERATURE',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-                ),
-              )
-              )
-              ],
-              ),
-              SizedBox(width: 15),
-              Column(children: [SizedBox(width: 250, child: TextField(
-                controller: _controllerAI, // Asocia el TextEditingController
-                style: GoogleFonts.orbitron(textStyle: TextStyle(color: const Color.fromARGB(255, 251, 251, 251))),
-                keyboardType: TextInputType.number, // Solo permite números
-                decoration: InputDecoration(
-                  labelStyle: GoogleFonts.orbitron(),
-                  labelText: 'CONSTANT A II',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-                ),
-              )
-              ), 
-              SizedBox(height: 15),
-              SizedBox(width: 250, child: TextField(
-                controller: _controllerBI, // Asocia el TextEditingController
-                style: GoogleFonts.orbitron(textStyle: TextStyle(color: const Color.fromARGB(255, 251, 251, 251))),
-                keyboardType: TextInputType.number, // Solo permite números
-                decoration: InputDecoration(
-                  labelStyle: GoogleFonts.orbitron(),
-                  labelText: 'CONSTANT B II',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-                ),
-              )
-              ),
-              SizedBox(height: 15),
-              SizedBox(width: 250, child: TextField(
-                controller: _controllerCI, // Asocia el TextEditingController
-                style: GoogleFonts.orbitron(textStyle: TextStyle(color: const Color.fromARGB(255, 251, 251, 251))),
-                keyboardType: TextInputType.number, // Solo permite números
-                decoration: InputDecoration(
-                  labelStyle: GoogleFonts.orbitron(),
-                  labelText: 'CONSTANT C II',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-                ),
-              )
-              ), 
-              SizedBox(height: 15),
-              SizedBox(width: 250, child: TextField(
-                controller: _controllerTI, // Asocia el TextEditingController
-                style: GoogleFonts.orbitron(textStyle: TextStyle(color: const Color.fromARGB(255, 251, 251, 251))),
-                keyboardType: TextInputType.number, // Solo permite números
-                decoration: InputDecoration(
-                  labelStyle: GoogleFonts.orbitron(),
-                  labelText: 'SATURATION TEMPERATURE II',
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
-                ),
-              )
-              )
-              ],)
-              ],
               ),
             ),
             SizedBox(height: 15),
@@ -148,24 +213,26 @@ class _MymainAppState extends State<MymainApp> {
                 double? valorCI = double.tryParse(_controllerAI.text);
                 double? valorTI = double.tryParse(_controllerTI.text);
 
-                if (valorA != null && valorB !=null && valorC != null && valorT != null && valorAI != null && valorBI !=null && valorCI != null && valorTI != null){
+                if (valorA != null &&
+                    valorB != null &&
+                    valorC != null &&
+                    valorT != null &&
+                    valorAI != null &&
+                    valorBI != null &&
+                    valorCI != null &&
+                    valorTI != null) {
                   setState(() {
-
-                  // ignore: unused_local_variable, non_constant_identifier_names
-                  double PsatI = exp(valorA - (valorB/(valorT+valorC)));
-                  // ignore: unused_local_variable, non_constant_identifier_names
-                  double PsatII = exp(valorAI - (valorBI/(valorTI+valorCI)));
-                  
-                  },);
+                    // ignore: unused_local_variable, non_constant_identifier_names
+                    double PsatI = exp(valorA - (valorB / (valorT + valorC)));
+                    // ignore: unused_local_variable, non_constant_identifier_names
+                    double PsatII = exp(valorAI - (valorBI / (valorTI + valorCI)));
+                  });
                 }
-                
-                
-
-                },
+              },
               style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30)
-              ),  
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30)),
               child: Text("Calcular", style: GoogleFonts.orbitron()),
             ),
             if (resultado != null)
