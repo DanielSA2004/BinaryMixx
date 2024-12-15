@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:math';
+import 'dart:io';
 
 class MymainApp extends StatefulWidget {
   const MymainApp({super.key, required this.title});
@@ -15,7 +16,7 @@ class _MymainAppState extends State<MymainApp> {
   final TextEditingController _controllerA = TextEditingController();
   final TextEditingController _controllerB = TextEditingController();
   final TextEditingController _controllerC = TextEditingController();
-  final TextEditingController _controllerT = TextEditingController();
+
   final TextEditingController _controllerAI = TextEditingController();
   final TextEditingController _controllerBI = TextEditingController();
   final TextEditingController _controllerCI = TextEditingController();
@@ -31,16 +32,22 @@ class _MymainAppState extends State<MymainApp> {
         alignment: Alignment.centerLeft,
         child: Column(
           children: [
-            SizedBox(height: 50),
+            SizedBox(height: 60),
+            Text(
+              'DATA INPUT',
+              style: GoogleFonts.orbitron(color: Colors.white),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: const Color.fromARGB(255, 255, 255, 255), // Color del borde
+                    color: const Color.fromARGB(
+                        255, 255, 255, 255), // Color del borde
                     width: 1, // Ancho del borde
                   ),
-                  borderRadius: BorderRadius.circular(16), // Esquinas redondeadas
+                  borderRadius:
+                      BorderRadius.circular(16), // Esquinas redondeadas
                 ),
                 padding: EdgeInsets.all(8.0), // Espaciado interno
                 child: Wrap(
@@ -60,7 +67,7 @@ class _MymainAppState extends State<MymainApp> {
                               labelStyle: GoogleFonts.orbitron(),
                               labelText: 'ANTOINE CONSTANT A',
                               border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(16)),
+                                  borderRadius: BorderRadius.circular(10)),
                             ),
                           ),
                         ),
@@ -78,7 +85,7 @@ class _MymainAppState extends State<MymainApp> {
                               labelStyle: GoogleFonts.orbitron(),
                               labelText: 'ANTOINE CONSTANT B',
                               border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(16)),
+                                  borderRadius: BorderRadius.circular(10)),
                             ),
                           ),
                         ),
@@ -96,28 +103,11 @@ class _MymainAppState extends State<MymainApp> {
                               labelStyle: GoogleFonts.orbitron(),
                               labelText: 'ANTOINE CONSTANT C',
                               border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(16)),
+                                  borderRadius: BorderRadius.circular(10)),
                             ),
                           ),
                         ),
                         SizedBox(height: 15),
-                        SizedBox(
-                          width: 250,
-                          child: TextField(
-                            controller: _controllerT,
-                            style: GoogleFonts.orbitron(
-                                textStyle: TextStyle(
-                                    color: const Color.fromARGB(
-                                        255, 251, 251, 251))),
-                            keyboardType: TextInputType.number,
-                            decoration: InputDecoration(
-                              labelStyle: GoogleFonts.orbitron(),
-                              labelText: 'SATURATION TEMPERATURE',
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(16)),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                     SizedBox(width: 15),
@@ -136,7 +126,7 @@ class _MymainAppState extends State<MymainApp> {
                               labelStyle: GoogleFonts.orbitron(),
                               labelText: 'CONSTANT A II',
                               border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(16)),
+                                  borderRadius: BorderRadius.circular(10)),
                             ),
                           ),
                         ),
@@ -154,7 +144,7 @@ class _MymainAppState extends State<MymainApp> {
                               labelStyle: GoogleFonts.orbitron(),
                               labelText: 'CONSTANT B II',
                               border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(16)),
+                                  borderRadius: BorderRadius.circular(10)),
                             ),
                           ),
                         ),
@@ -172,7 +162,7 @@ class _MymainAppState extends State<MymainApp> {
                               labelStyle: GoogleFonts.orbitron(),
                               labelText: 'CONSTANT C II',
                               border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(16)),
+                                  borderRadius: BorderRadius.circular(10)),
                             ),
                           ),
                         ),
@@ -188,9 +178,9 @@ class _MymainAppState extends State<MymainApp> {
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
                               labelStyle: GoogleFonts.orbitron(),
-                              labelText: 'SATURATION TEMPERATURE II',
+                              labelText: 'SYSTEM TEMPERATURE',
                               border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(16)),
+                                  borderRadius: BorderRadius.circular(10)),
                             ),
                           ),
                         ),
@@ -201,13 +191,14 @@ class _MymainAppState extends State<MymainApp> {
               ),
             ),
             SizedBox(height: 15),
+            //BOTON CALCULAR
             ElevatedButton(
               onPressed: () {
                 // Convierte el texto a número (si es válido)
                 double? valorA = double.tryParse(_controllerA.text);
                 double? valorB = double.tryParse(_controllerB.text);
                 double? valorC = double.tryParse(_controllerA.text);
-                double? valorT = double.tryParse(_controllerT.text);
+
                 double? valorAI = double.tryParse(_controllerAI.text);
                 double? valorBI = double.tryParse(_controllerBI.text);
                 double? valorCI = double.tryParse(_controllerAI.text);
@@ -216,16 +207,59 @@ class _MymainAppState extends State<MymainApp> {
                 if (valorA != null &&
                     valorB != null &&
                     valorC != null &&
-                    valorT != null &&
                     valorAI != null &&
                     valorBI != null &&
                     valorCI != null &&
                     valorTI != null) {
                   setState(() {
                     // ignore: unused_local_variable, non_constant_identifier_names
-                    double PsatI = exp(valorA - (valorB / (valorT + valorC)));
+                    double PsatI = exp(valorA - (valorB / (valorTI + valorC)));
                     // ignore: unused_local_variable, non_constant_identifier_names
-                    double PsatII = exp(valorAI - (valorBI / (valorTI + valorCI)));
+                    double PsatII =
+                        exp(valorAI - (valorBI / (valorTI + valorCI)));
+
+                    List<double> x_1 = [
+                      0,
+                      0.1,
+                      0.2,
+                      0.3,
+                      0.4,
+                      0.5,
+                      0.6,
+                      0.7,
+                      0.8,
+                      0.9,
+                      1
+                    ];
+
+                    // ignore: unused_local_variable
+                    List<double> x_2 = [
+                      1,
+                      0.9,
+                      0.8,
+                      0.7,
+                      0.6,
+                      0.5,
+                      0.4,
+                      0.3,
+                      0.2,
+                      0.1,
+                      0
+                    ];
+
+                    // ignore: unused_local_variable
+                    List<double> P = List.filled(x_1.length, 0.0);
+                    // ignore: unused_local_variable
+                    List<double> y_1 = List.filled(x_1.length, 0.0);
+                    // ignore: unused_local_variable
+                    List<double> y_2 = List.filled(x_1.length, 0.0);
+
+                    for (int i = 0; i < x_1.length; i++) {
+                      P[i] = x_1[i] * PsatI + x_2[i] * PsatII;
+                      y_1[i] = x_1[i] * PsatI / P[i];
+                    }
+                    resultado = P[1];
+                    // ignore: unused_local_variable
                   });
                 }
               },
@@ -238,7 +272,8 @@ class _MymainAppState extends State<MymainApp> {
             if (resultado != null)
               Text(
                 "Resultado: $resultado",
-                style: GoogleFonts.orbitron(textStyle: TextStyle(color: Colors.white)),
+                style: GoogleFonts.orbitron(
+                    textStyle: TextStyle(color: Colors.white)),
               ),
           ],
         ),
